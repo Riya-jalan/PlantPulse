@@ -1,21 +1,27 @@
-{% extends 'layout.html' %} 
-{% block body %}
-
 <style>
-  /* Set the page background color */
+  /* Set the page background color and global font */
   html, body {
     background-color: #e0f7fa;
+    font-family: Arial, sans-serif;
   }
 
-  /* Style for the container div */
-  .container-div {
+  /* Style for the header text */
+  .header-text {
+    text-align: center;
+    color: #004d40;
+    margin: 0px;
+    font-weight: 700;
+  }
+
+  /* Box container style */
+  .content-box {
     width: 350px;
-    height: 50rem;
-    margin: 0px auto;
-    color: black;
-    border-radius: 25px;
-    padding: 10px 10px;
-    font-weight: bold;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #004d40;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   /* Style for the file input box */
@@ -29,44 +35,16 @@
   /* Style for the Predict button */
   .btn-predict {
     font-weight: bold;
-    background-color: #66bb6a; /* Light green color */
+    background-color: #004d40; /* Updated to specified color */
     color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
   }
 
-  /* Style for the header text */
-  .header-text {
-    text-align: center;
-    color: #004d40;
-    margin: 0px;
-    font-weight: 700; /* Bold text for the header */
+  /* Predict button hover effect */
+  .btn-predict:hover {
+    background-color: #003d33; /* Slightly darker shade for hover */
   }
 </style>
-
-<br /><br />
-<h1 class="header-text">
-  <b>Find out which disease has been caught by your plant</b>
-</h1>
-<br /><br>
-
-<div class="container-div">
-  <form class="form-signin" method="post" enctype="multipart/form-data">
-    <h2 class="h4 mb-3 font-weight-normal"><b>Please Upload The Image</b></h2>
-    <input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)">
-    <br><br>
-    <img id="output-image" class="rounded mx-auto d-block" />
-    <button class="btn btn-lg btn-predict btn-block" type="submit">Predict</button>
-  </form>
-</div>
-
-<script type="text/javascript">
-  function preview_image(event) {
-    var reader = new FileReader();
-    reader.onload = function () {
-      var output = document.getElementById('output-image');
-      output.src = reader.result;
-    }
-    reader.readAsDataURL(event.target.files[0]);
-  }
-</script>
-
-{% endblock %}
