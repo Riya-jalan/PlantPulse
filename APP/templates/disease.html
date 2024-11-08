@@ -7,15 +7,18 @@
     background-color: #e0f7fa;
   }
 
-  /* Style for the container div */
+  /* Style for the container div to look like a box */
   .container-div {
     width: 350px;
-    height: 50rem;
-    margin: 0px auto;
+    height: auto;
+    margin: 0 auto;
     color: black;
-    border-radius: 25px;
-    padding: 10px 10px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for box effect */
     font-weight: bold;
+    text-align: center;
   }
 
   /* Style for the file input box */
@@ -24,6 +27,7 @@
     background-color: #f1f8e9;
     border-radius: 5px;
     padding: 10px;
+    width: 100%;
   }
 
   /* Style for the Predict button */
@@ -31,6 +35,8 @@
     font-weight: bold;
     background-color: #66bb6a; /* Light green color */
     color: white;
+    width: 100%; /* Full width of button */
+    border-radius: 8px;
   }
 
   /* Style for the header text */
@@ -39,6 +45,15 @@
     color: #004d40;
     margin: 0px;
     font-weight: 700; /* Bold text for the header */
+  }
+
+  /* Style for preview image */
+  #output-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   }
 </style>
 
@@ -54,7 +69,8 @@
     <input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)">
     <br><br>
     <img id="output-image" class="rounded mx-auto d-block" />
-    <button class="btn btn-lg btn-predict btn-block" type="submit">Predict</button>
+    <br><br>
+    <button class="btn btn-lg btn-predict" type="submit">Predict</button>
   </form>
 </div>
 
