@@ -4,7 +4,9 @@
 <style>
   html body {
     background-color: #e0f7fa; /* Soft green-blue background */
+    font-family: Arial, sans-serif;
   }
+
   .form-table {
     width: 100%;
     max-width: 1200px;
@@ -12,29 +14,37 @@
     padding: 20px;
     border-collapse: collapse;
   }
+
   .form-container {
     border: 2px solid #2e7d32; /* Dark green border */
     border-radius: 15px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px; /* Reduced bottom padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     background-color: white;
+    margin-top: 20px; /* Added margin-top to push it down */
+    margin-bottom: 10px; /* Reduced margin-bottom */
   }
+
   td.form-section, td.image-section {
     vertical-align: top;
     padding: 15px;
   }
+
   table.form-inner-table {
     width: 100%;
   }
+
   table.form-inner-table td {
     padding: 10px;
   }
+
   .image-section {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .image-container {
     width: 100%;
     display: flex;
@@ -42,24 +52,65 @@
     flex-direction: column;
     align-items: center;
   }
+
   .image-container img {
     width: 80%;
     border: 3px solid #2e7d32; /* Dark green border for images */
     border-radius: 10px;
     margin-bottom: 15px;
   }
+
   .image-left {
     align-self: flex-start;
   }
+
   .image-right {
     align-self: flex-end;
+  }
+
+  /* Input field styles */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2e7d32; /* Matching green border */
+    border-radius: 8px;
+    background-color: #f1f8e9; /* Light green background for inputs */
+    color: #004d40; /* Text color */
+    font-size: 16px;
+  }
+
+  .form-control:focus {
+    border-color: #388e3c; /* Darker green for focus state */
+    outline: none;
+  }
+
+  /* Button style */
+  .btn-info {
+    color: white;
+    background-color: #388e3c; /* Green button */
+    font-weight: bold;
+    width: 130px;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 21px;
+  }
+
+  .btn-info:hover {
+    background-color: #2e7d32; /* Darker green on hover */
+  }
+
+  /* Label styles */
+  label {
+    font-size: 17px;
+    color: #004d40;
+    font-weight: bold;
   }
 </style>
 
 <br /><br />
-<h2 style="text-align: center; margin: 0px; color: #004d40;">
+<h1 style="text-align: center; margin: 0px; color: #004d40;">
   <b>Explore the Perfect Crop for Your Farm’s Soil and Climate</b>
-</h2>
+</h1>
 <br />
 
 <table class="form-table">
@@ -81,7 +132,7 @@
         <form method="POST" action="{{ url_for('crop_prediction') }}">
           <table class="form-inner-table">
             <tr>
-              <td><label for="Nitrogen" style="font-size: 17px; color: #004d40;"><b>Nitrogen</b></label></td>
+              <td><label for="Nitrogen">Nitrogen</label></td>
               <td>
                 <input
                   type="number"
@@ -89,13 +140,12 @@
                   id="Nitrogen"
                   name="nitrogen"
                   placeholder="Enter the value (example: 50)"
-                  style="font-weight: bold; color: #004d40;"
                   required
                 />
               </td>
             </tr>
             <tr>
-              <td><label for="Phosphorous" style="font-size: 17px; color: #004d40;"><b>Phosphorous</b></label></td>
+              <td><label for="Phosphorous">Phosphorous</label></td>
               <td>
                 <input
                   type="number"
@@ -103,13 +153,12 @@
                   id="Phosphorous"
                   name="phosphorous"
                   placeholder="Enter the value (example: 50)"
-                  style="font-weight: bold; color: #004d40;"
                   required
                 />
               </td>
             </tr>
             <tr>
-              <td><label for="Pottasium" style="font-size: 17px; color: #004d40;"><b>Potassium</b></label></td>
+              <td><label for="Pottasium">Potassium</label></td>
               <td>
                 <input
                   type="number"
@@ -117,13 +166,12 @@
                   id="Pottasium"
                   name="pottasium"
                   placeholder="Enter the value (example: 50)"
-                  style="font-weight: bold; color: #004d40;"
                   required
                 />
               </td>
             </tr>
             <tr>
-              <td><label for="ph" style="font-size: 17px; color: #004d40;"><b>pH Level</b></label></td>
+              <td><label for="ph">pH Level</label></td>
               <td>
                 <input
                   type="number"
@@ -132,13 +180,12 @@
                   id="ph"
                   name="ph"
                   placeholder="Enter the value"
-                  style="font-weight: bold; color: #004d40;"
                   required
                 />
               </td>
             </tr>
             <tr>
-              <td><label for="Rainfall" style="font-size: 17px; color: #004d40;"><b>Rainfall (in mm)</b></label></td>
+              <td><label for="Rainfall">Rainfall (in mm)</label></td>
               <td>
                 <input
                   type="number"
@@ -147,32 +194,29 @@
                   id="Rainfall"
                   name="rainfall"
                   placeholder="Enter the value"
-                  style="font-weight: bold; color: #004d40;"
                   required
                 />
               </td>
             </tr>
             <tr>
-              <td><label for="State" style="font-size: 17px; color: #004d40;"><b>State</b></label></td>
+              <td><label for="State">State</label></td>
               <td>
                 <select
                   onchange="print_city('state', this.selectedIndex);"
                   id="sts"
                   name="stt"
                   class="form-control"
-                  style="font-weight: bold; color: #004d40;"
                   required
                 ></select>
               </td>
             </tr>
             <tr>
-              <td><label for="City" style="font-size: 17px; color: #004d40;"><b>City</b></label></td>
+              <td><label for="City">City</label></td>
               <td>
                 <select
                   id="state"
                   class="form-control"
                   name="city"
-                  style="font-weight: bold; color: #004d40;"
                   required
                 ></select>
                 <!-- Include script to populate state and city -->
@@ -186,7 +230,6 @@
                 <button
                   type="submit"
                   class="btn btn-info"
-                  style="color: white; background-color: #388e3c; font-weight: bold; width: 130px; height: 50px; border-radius: 12px; font-size: 21px;"
                 >
                   Predict
                 </button>
