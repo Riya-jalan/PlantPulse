@@ -123,15 +123,16 @@ label[for="crop"] {
   <div class="image-container">
     <!-- Image 1 -->
     <div class="image-box">
-      <img src="images/f1.jpg" alt="fertilize img">
+      <img src="{{ url_for('static', filename='images/f1.jpg') }}" alt="fert1" class="image-left">
     </div>
     <!-- Image 2 -->
     <div class="image-box">
-      <img src="images/f3.jpg" alt="fertilizer2 img">
+      <img src="{{ url_for('static', filename='images/f2.jpg') }}" alt="fert2" class="image-left">
+
     </div>
     <!-- Image 3 -->
     <div class="image-box">
-      <img src="images/f2.jpg" alt="fertilizer3 image">
+      <img src="{{ url_for('static', filename='images/f3.jpg') }}" alt="fert3" class="image-left">
     </div>
   </div>
 
