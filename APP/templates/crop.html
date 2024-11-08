@@ -48,18 +48,19 @@
   .image-container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     align-items: center;
   }
 
   .image-container img {
-    width: 80%;
-    border: 3px solid #2e7d32; /* Dark green border for images */
-    border-radius: 10px;
+    width: 250px; /* Set consistent width */
+    height: 200px; /* Set consistent height */
+    border-radius: 10px; /* Keeps corners curved */
     margin-bottom: 15px;
+    object-fit: cover; /* Ensures images maintain aspect ratio within the defined size */
   }
 
+  /* Zigzag placement for images */
   .image-left {
     align-self: flex-start;
   }
@@ -89,7 +90,7 @@
     color: white;
     background-color: #388e3c; /* Green button */
     font-weight: bold;
-    width: 130px;
+    width: 100%; /* Full-width button */
     height: 50px;
     border-radius: 12px;
     font-size: 21px;
@@ -117,14 +118,9 @@
   <tr>
     <td class="image-section">
       <div class="image-container">
-        <!-- First Image (left aligned) -->
-        <img src="C:\Users\SAMEEKSHA Y P\PlantPulse\APP\static\images\crop_selection.jpeg" alt="Image 1" class="image-left">
-        
-        <!-- Second Image (right aligned) -->
-        <img src="C:\Users\SAMEEKSHA Y P\PlantPulse\APP\static\images\npknew.jpg" alt="Image 2" class="image-right">
-        
-        <!-- Third Image (left aligned) -->
-        <img src="C:\Users\SAMEEKSHA Y P\PlantPulse\APP\static\images\seeds.jpeg" alt="Image 3" class="image-left">
+        <img src="{{ url_for('static', filename='images/crop_selection.jpeg') }}" alt="Crop Selection Image" class="image-left">
+        <img src="{{ url_for('static', filename='images/npknew.jpg') }}" alt="NPK Image" class="image-right">
+        <img src="{{ url_for('static', filename='images/seeds.jpeg') }}" alt="Seeds Image" class="image-left">
       </div>
     </td>
     <td style="width: 50%;">
@@ -206,6 +202,7 @@
                   id="sts"
                   name="stt"
                   class="form-control"
+                  placeholder="Select or Enter State"
                   required
                 ></select>
               </td>
@@ -217,6 +214,7 @@
                   id="state"
                   class="form-control"
                   name="city"
+                  placeholder="Select or Enter City"
                   required
                 ></select>
                 <!-- Include script to populate state and city -->

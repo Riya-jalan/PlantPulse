@@ -372,7 +372,7 @@ li > a:only-child:after { content: ''; }
 }
 
 .banner-top {
-    background: url(../images/mainback.jpeg) no-repeat center;
+    background: url(../images/3.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -550,7 +550,7 @@ p.about-text {
 
 /*-- bg --*/
 .background-img {
-    background: url(../images/5.jpg) no-repeat center;
+    background: url(../images/corenew.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
