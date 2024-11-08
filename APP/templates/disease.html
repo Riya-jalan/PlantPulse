@@ -2,20 +2,29 @@
 {% block body %}
 
 <style>
-  /* Set the page background color */
+  /* Set the page background color and global font */
   html, body {
     background-color: #e0f7fa;
+    font-family: Arial, sans-serif;
   }
 
-  /* Style for the container div */
-  .container-div {
+  /* Style for the header text */
+  .header-text {
+    text-align: center;
+    color: #004d40;
+    margin: 0px;
+    font-weight: 700;
+  }
+
+  /* Box container style */
+  .content-box {
     width: 350px;
-    height: 50rem;
-    margin: 0px auto;
-    color: black;
-    border-radius: 25px;
-    padding: 10px 10px;
-    font-weight: bold;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #66bb6a; /* Green border */
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
   }
 
   /* Style for the file input box */
@@ -26,19 +35,20 @@
     padding: 10px;
   }
 
-  /* Style for the Predict button */
+  /* Style for the Predict button with rounded corners and custom green color */
   .btn-predict {
     font-weight: bold;
-    background-color: #66bb6a; /* Light green color */
+    background-color: #66bb6a;
     color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
   }
 
-  /* Style for the header text */
-  .header-text {
-    text-align: center;
-    color: #004d40;
-    margin: 0px;
-    font-weight: 700; /* Bold text for the header */
+  /* Predict button hover effect */
+  .btn-predict:hover {
+    background-color: #57a763;
   }
 </style>
 
@@ -48,7 +58,8 @@
 </h1>
 <br /><br>
 
-<div class="container-div">
+<!-- Content box with green border -->
+<div class="content-box">
   <form class="form-signin" method="post" enctype="multipart/form-data">
     <h2 class="h4 mb-3 font-weight-normal"><b>Please Upload The Image</b></h2>
     <input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)">
