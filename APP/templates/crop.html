@@ -116,20 +116,15 @@
 <table class="form-table">
   <tr>
     <td class="image-section">
-      <div class="image-container">
-        <!-- First Image (left aligned) -->
-        <img src="C:\Users\SAMEEKSHA Y P\PlantPulse\APP\static\images\crop_selection.jpeg" alt="Image 1" class="image-left">
-        
-        <!-- Second Image (right aligned) -->
-        <img src="C:\Users\SAMEEKSHA Y P\PlantPulse\APP\static\images\npknew.jpg" alt="Image 2" class="image-right">
-        
-        <!-- Third Image (left aligned) -->
-        <img src="C:\Users\SAMEEKSHA Y P\PlantPulse\APP\static\images\seeds.jpeg" alt="Image 3" class="image-left">
+      <div class="image-container" style="display: flex; justify-content: space-around; margin-bottom: 20px;">
+        <img src="{{ url_for('static', filename='images/crop_selection.jpeg') }}" alt="Crop Selection Image">
+        <img src="{{ url_for('static', filename='images/npknew.jpg') }}" alt="NPK Image">
+        <img src="{{ url_for('static', filename='images/seeds.jpeg') }}" alt="Seeds Image">
       </div>
     </td>
     <td style="width: 50%;">
       <div class="form-container">
-        <form method="POST" action="{{ url_for('crop_prediction') }}">
+        <form   method="POST"action="{{ url_for('crop_prediction') }}">
           <table class="form-inner-table">
             <tr>
               <td><label for="Nitrogen">Nitrogen</label></td>
